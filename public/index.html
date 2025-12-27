@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VHUB</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">V</div>
+        <div class="brand-text">
+          <div class="title">VHUB</div>
+          <div class="subtitle">Realtime threads · posts expire in ~10 minutes</div>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="dot" id="dot"></span>
+        <span id="connText">Connecting…</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="panel-title">Threads</div>
+          <div id="threadList" class="thread-list"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">New Thread</div>
+          <div class="row">
+            <input id="newThreadName" class="input" placeholder="예: sports, music…" />
+            <button id="btnCreateThread" class="btn btn-ghost">Create</button>
+          </div>
+          <div class="hint">쓰레드는 메모리에만 유지돼요.</div>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="panel">
+          <div class="content-head">
+            <div>
+              <div class="panel-title" id="activeThreadTitle">—</div>
+              <div class="meta" id="activeThreadMeta">Select a thread</div>
+            </div>
+
+            <button id="btnRefresh" class="btn btn-ghost">Refresh</button>
+          </div>
+
+          <div class="composer">
+            <div class="row">
+              <input id="author" class="input" placeholder="작성자 (선택)" />
+              <input id="title" class="input" placeholder="제목" />
+            </div>
+            <textarea id="content" class="textarea" placeholder="내용을 입력하세요…"></textarea>
+            <div class="row space">
+              <div class="hint" id="ttlHint">게시글은 약 10분 뒤 자동 삭제됩니다.</div>
+              <button id="btnPost" class="btn">Post</button>
+            </div>
+          </div>
+
+          <div id="postList" class="posts"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
